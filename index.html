@@ -92,6 +92,18 @@
     .campus-gallery .gallery-wide { grid-column: span 2; }
     .campus-gallery .gallery-wide img { aspect-ratio: 16 / 9; }
     .gallery-credit { margin-top: 18px; }
+    .guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .guide-card { padding: 24px 25px; min-height: 225px; display: flex; flex-direction: column; align-items: flex-start; }
+    .guide-kicker { color: #8b7957; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+    .guide-card h3 { margin: 10px 0 9px; color: var(--pine); font-family: "Songti SC", "Noto Serif SC", serif; font-size: 19px; }
+    .guide-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .guide-tags span { padding: 6px 9px; border-radius: 999px; background: #e8eee7; color: #41604e; font-size: 11px; }
+    .guide-link { margin-top: auto; padding-top: 18px; color: #416a53; font-size: 12px; font-weight: 700; text-underline-offset: 3px; }
+    .guide-note { margin-top: 16px; padding: 15px 18px; border-left: 3px solid #c2a46c; border-radius: 0 12px 12px 0; background: #f2eee3; color: #665c49; font-size: 12px; line-height: 1.85; }
+    .freshman-tip { margin-top: 16px; padding: 22px 25px; border-radius: 16px; background: #e6eee7; }
+    .freshman-tip h3 { margin: 0 0 8px; color: var(--pine); font-family: "Songti SC", "Noto Serif SC", serif; font-size: 18px; }
+    .freshman-tip p { margin: 0; color: #53675b; font-size: 13px; line-height: 1.9; }
     .timeline { padding: 28px 30px; }
     .timeline-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 34px; }
     .timeline-item { display: grid; grid-template-columns: 74px 1fr; gap: 14px; padding: 17px 0; border-bottom: 1px solid var(--line); }
@@ -176,6 +188,8 @@
       .sponsor-banner .partner-card { flex-direction: column; align-items: flex-start; gap: 13px; padding: 16px 18px; }
       .sponsor-banner .partner-card h3 { font-size: 20px; }
       .timeline-list, .culture-grid { grid-template-columns: 1fr; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .guide-card { min-height: 0; }
       .timeline { padding: 22px 23px; }
       .campus-feature { grid-template-columns: 1fr; }
       .campus-visual { min-height: 0; }
@@ -214,7 +228,7 @@
         <span><span class="brand-title">固高 · 同学站</span><span class="brand-sub">STUDENT COMMUNITY · GUSHI</span></span>
       </a>
       <nav id="primary-nav" aria-label="主导航">
-        <a href="#school">学校资料</a><a href="#campus">校园风景</a><a href="#history">校史文化</a><a href="#updates">公开资讯</a><a href="#douyin">抖音外链</a><a href="#about">关于本站</a>
+        <a href="#school">学校资料</a><a href="#campus">校园风景</a><a href="#campus-guide">地点导览</a><a href="#freshman">新生指南</a><a href="#history">校史文化</a><a href="#updates">公开资讯</a><a href="#douyin">抖音外链</a><a href="#about">关于本站</a>
       </nav>
       <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
         <span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>菜单</span>
@@ -276,6 +290,37 @@
       <div class="photo-credit gallery-credit">本区 13 张照片与上方精选图均来自抖音用户 <strong>滒滒君晟</strong> 于 2022-03-15 发布的图文作品《固高校园春色——醉美春光三月里！》。照片为发布时的校园记录；点击照片可查看原帖。<a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">查看原帖与作者信息 ↗</a></div>
     </section>
 
+    <section class="section" id="campus-guide">
+      <div class="section-head">
+        <div><div class="kicker">Campus guide</div><h2>校园地点导览</h2></div>
+        <p>先从公开地图认识校园周边与部分校内地点。地图点位是社区地图资料，适合初步辨认；到校后请以校门口引导、校园标识和老师指引为准。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="panel guide-card">
+          <div class="guide-kicker">01 / 学习与日常</div>
+          <h3>教学楼与生活点位</h3>
+          <p>公开地图可见“教学楼”“开水房”“小食堂”等标注。它们帮助你熟悉校园生活的大致分区，实际名称、开放安排和位置以校内指引为准。</p>
+          <div class="guide-tags"><span>教学楼</span><span>开水房</span><span>小食堂</span></div>
+          <a class="guide-link" href="https://mapcarta.com/W127221793" target="_blank" rel="noopener noreferrer">查看公开地图标注 ↗</a>
+        </article>
+        <article class="panel guide-card">
+          <div class="guide-kicker">02 / 运动与活动</div>
+          <h3>篮球场与活动空间</h3>
+          <p>社区地图还标有篮球场等运动点位。新生入校后可以结合校园导引牌了解场地位置，并遵守学校对场地开放和活动时段的安排。</p>
+          <div class="guide-tags"><span>篮球场</span><span>活动空间</span></div>
+          <a class="guide-link" href="https://mapcarta.com/W127221793" target="_blank" rel="noopener noreferrer">查看地图与周边地点 ↗</a>
+        </article>
+        <article class="panel guide-card">
+          <div class="guide-kicker">03 / 园林与景观</div>
+          <h3>植物园、静思园与月牙池</h3>
+          <p>公开地图及校园介绍中出现过这些景观点位。它们适合作为校园记忆的关键词；具体边界、通行路线及是否开放，请以学校现场信息为准。</p>
+          <div class="guide-tags"><span>植物园</span><span>静思园</span><span>月牙池</span></div>
+          <a class="guide-link" href="https://mapcarta.com/W127221793" target="_blank" rel="noopener noreferrer">查看公开地图标注 ↗</a>
+        </article>
+      </div>
+      <div class="guide-note"><strong>地图使用提示：</strong>此处汇总的是 OpenStreetMap 社区贡献、由 Mapcarta 展示的地图标注，不是学校发布的正式校园平面图。点位可能不完整或过时；访客入校、校内路线及场所开放安排请先向学校核实。到校导航：<a href="https://ditu.amap.com/place/B01780024M" target="_blank" rel="noopener noreferrer">高德地图学校地点 ↗</a>。</div>
+    </section>
+
     <section class="section" id="school">
       <div class="section-head">
         <div><div class="kicker">A quick introduction</div><h2>学校资料</h2></div>
@@ -295,6 +340,38 @@
           <p class="source">资料来源：<a href="https://www.gushi.gov.cn/zfxxgk/rootfiles/2025/10/30/1756064040323466-1756064049659597.pdf" target="_blank" rel="noopener noreferrer">固始县人民政府公开资料</a>、<a href="https://jytyj.xinyang.gov.cn/2024/04-07/168858.html" target="_blank" rel="noopener noreferrer">信阳市教育体育局专题</a>。页面由学生整理，非学校官方页面。</p>
         </aside>
       </div>
+    </section>
+
+    <section class="section" id="freshman">
+      <div class="section-head">
+        <div><div class="kicker">Freshman guide</div><h2>新生指南</h2></div>
+        <p>把入学前最容易遗漏的事列成清单。每年招生、报到和住宿安排可能变化，请以当年学校及教育部门的正式通知为准。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="panel guide-card">
+          <div class="guide-kicker">STEP 01 / 招生录取</div>
+          <h3>先看当年政策，再填志愿</h3>
+          <p>关注固始县教育体育局及招生考试服务中心发布的招生安排，按当年规定核对批次、时间、平台和录取信息。2026 年志愿填报通知只作往年参考，报名时段已经结束。</p>
+          <a class="guide-link" href="https://www.gushi.gov.cn/2026/06-12/789705.html" target="_blank" rel="noopener noreferrer">阅读 2026 年招生信息（往年参考）↗</a>
+        </article>
+        <article class="panel guide-card">
+          <div class="guide-kicker">STEP 02 / 报到准备</div>
+          <h3>等正式通知，逐项确认</h3>
+          <p>收到录取信息后，记下报到日期、地点、所需材料和联系人；同时核实住宿、校服、床品、缴费方式等安排。未在当年通知中确认的物品，不要照搬旧攻略购买。</p>
+          <a class="guide-link" href="https://www.gushi.gov.cn/zwgk/gsgg/" target="_blank" rel="noopener noreferrer">查看固始县政府公示公告 ↗</a>
+        </article>
+        <article class="panel guide-card">
+          <div class="guide-kicker">STEP 03 / 到校路线</div>
+          <h3>提前核对学校与入口</h3>
+          <p>政府公开资料所列校址为固始县城关镇王审知大道中段 196 号。出发前在地图中搜索学校，并再核对录取/报到通知写明的校区、入口和集合地点。</p>
+          <a class="guide-link" href="https://ditu.amap.com/place/B01780024M" target="_blank" rel="noopener noreferrer">打开高德地图导航 ↗</a>
+        </article>
+      </div>
+      <aside class="freshman-tip">
+        <h3>报到前快速检查</h3>
+        <p>保存录取与报到通知；按清单整理证件和个人学习用品；确认交通、报到地点及联系人；向学校核实住宿和统一采购安排；所有缴费信息以正式通知为准，不向个人账户转账。</p>
+      </aside>
+      <p class="source">校址来源：<a href="https://www.gushi.gov.cn/zfxxgk/rootfiles/2025/10/30/1756064040323466-1756064049659597.pdf" target="_blank" rel="noopener noreferrer">固始县人民政府公开资料</a>。招生示例来源：<a href="https://www.gushi.gov.cn/2026/06-12/789705.html" target="_blank" rel="noopener noreferrer">固始县人民政府：2026 年普通高中招生志愿填报</a>。本指南为学生整理的入门提示，不构成学校通知。</p>
     </section>
 
     <section class="section" id="history">
