@@ -84,6 +84,15 @@
     .campus-copy p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
     .photo-credit { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); color: #68746e; font-size: 12px; line-height: 1.8; }
     .photo-credit a { display: inline-block; margin-top: 7px; color: #416a53; font-weight: 700; text-underline-offset: 3px; }
+    .campus-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+    .campus-gallery figure { margin: 0; min-width: 0; }
+    .campus-gallery a { display: block; position: relative; overflow: hidden; border-radius: 16px; background: #e5ece5; box-shadow: var(--shadow); }
+    .campus-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .35s ease; }
+    .campus-gallery a:hover img { transform: scale(1.04); }
+    .campus-gallery figcaption { position: absolute; inset: auto 0 0; padding: 34px 12px 12px; color: white; background: linear-gradient(transparent, rgba(16, 36, 29, .82)); font-size: 12px; font-weight: 600; line-height: 1.5; }
+    .campus-gallery .gallery-wide { grid-column: span 2; }
+    .campus-gallery .gallery-wide img { aspect-ratio: 16 / 9; }
+    .gallery-credit { margin-top: 18px; }
     .timeline { padding: 28px 30px; }
     .timeline-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 34px; }
     .timeline-item { display: grid; grid-template-columns: 74px 1fr; gap: 14px; padding: 17px 0; border-bottom: 1px solid var(--line); }
@@ -162,6 +171,10 @@
       .campus-feature { grid-template-columns: 1fr; }
       .campus-visual { min-height: 0; }
       .campus-photo { height: auto; min-height: 0; max-height: 460px; object-fit: contain; }
+      .campus-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .campus-gallery img { aspect-ratio: 1 / 1; }
+      .campus-gallery .gallery-wide { grid-column: span 2; }
+      .campus-gallery .gallery-wide img { aspect-ratio: 16 / 9; }
       .school-card { min-height: 0; }
       .footer-row { display: block; }
       .footer-row > * + * { margin-top: 13px; }
@@ -212,7 +225,7 @@
     <section class="section" id="campus">
       <div class="section-head">
         <div><div class="kicker">Campus moments</div><h2>校园风景</h2></div>
-        <p>一张来自同学分享的校园春日记录。图片保留作者署名和原帖入口，更多内容请到抖音原帖查看。</p>
+        <p>精选 14 张校园春日景观照片，保留作者署名和原帖入口。照片记录作者发布时的校园景色，不代表当前实景。</p>
       </div>
       <article class="panel campus-feature">
         <div class="campus-visual">
@@ -225,6 +238,22 @@
           <div class="photo-credit">图片来源：抖音用户 <strong>滒滒君晟</strong>，作品《固高校园春色——醉美春光三月里！》（2022-03-15）。<a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">查看原帖与作者信息 ↗</a></div>
         </div>
       </article>
+      <div class="campus-gallery" aria-label="校园春日照片集">
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-01.webp" alt="春日里的花木与校园园路" loading="lazy"><figcaption>花木与园路</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-02.webp" alt="校园里的垂柳与春日绿荫" loading="lazy"><figcaption>柳树与春日绿荫</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-03.webp" alt="春日校园绿地与远处景致" loading="lazy"><figcaption>校园绿地一角</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-04.webp" alt="花枝点缀的校园石径" loading="lazy"><figcaption>花枝与石径</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-05.webp" alt="校园里盛放的玉兰花" loading="lazy"><figcaption>盛放的玉兰</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-06.webp" alt="教学楼旁的春日花木" loading="lazy"><figcaption>教学楼旁的春花</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-07.webp" alt="树影下的校园小径" loading="lazy"><figcaption>树影下的小径</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-08.webp" alt="校园池塘边的垂柳与石桥" loading="lazy"><figcaption>池畔垂柳</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-09.webp" alt="校园春日里盛开的玉兰花" loading="lazy"><figcaption>玉兰花开</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-10.webp" alt="春花映衬校园教学楼" loading="lazy"><figcaption>教学楼与花树</figcaption></a></figure>
+        <figure class="gallery-wide"><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-11.webp" alt="固始县高级中学校园建筑与绿地俯瞰" loading="lazy"><figcaption>校园俯瞰</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-12.webp" alt="校园里的石桥与池塘" loading="lazy"><figcaption>石桥与池塘</figcaption></a></figure>
+        <figure><a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer"><img src="assets/campus-gallery-13.webp" alt="春日繁花与校园小路" loading="lazy"><figcaption>春日繁花</figcaption></a></figure>
+      </div>
+      <div class="photo-credit gallery-credit">本区 13 张照片与上方精选图均来自抖音用户 <strong>滒滒君晟</strong> 于 2022-03-15 发布的图文作品《固高校园春色——醉美春光三月里！》。照片为发布时的校园记录；点击照片可查看原帖。<a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">查看原帖与作者信息 ↗</a></div>
     </section>
 
     <section class="section" id="school">
@@ -364,7 +393,7 @@
           </div>
         </article>
       </div>
-      <div class="disclaimer-inline">抖音可能按账号状态和作品设置调整可见内容。本站仅展示一张经站点搭建者确认可用于学校宣传的校园景观图片，并标注原作者与原帖链接；其他作品仍通过抖音原链接查看。作品作者与学校的关系未经本站确认。</div>
+      <div class="disclaimer-inline">抖音可能按账号状态和作品设置调整可见内容。本站校园图集来自公开图文作品，标注了原作者与原帖入口；照片记录作者发布时的校园景色，不代表当前情况。作品作者与学校的关系未经本站确认。</div>
     </section>
 
     <section class="section" id="about">
