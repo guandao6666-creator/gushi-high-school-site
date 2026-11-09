@@ -51,7 +51,7 @@
     .nav-toggle-icon i { display: block; width: 16px; height: 2px; border-radius: 2px; background: currentColor; }
     .hero { background: var(--pine); color: white; overflow: hidden; position: relative; }
     .hero::after { content: ""; position: absolute; width: 410px; height: 410px; border: 1px solid rgba(230,208,164,.2); border-radius: 50%; right: -70px; top: -90px; box-shadow: 0 0 0 45px rgba(230,208,164,.04), 0 0 0 95px rgba(230,208,164,.035); }
-    .hero-inner { position: relative; z-index: 1; padding: 73px 0 78px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 52px; }
+    .hero-inner { position: relative; z-index: 1; padding: 45px 0 78px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 52px; }
     .eyebrow { text-transform: uppercase; color: #e6c98f; font-size: 11px; font-weight: 700; letter-spacing: .2em; }
     h1 { font-family: "Songti SC", "Noto Serif SC", Georgia, serif; font-size: clamp(38px, 5vw, 62px); line-height: 1.2; letter-spacing: .035em; font-weight: 600; margin: 18px 0 18px; }
     .hero p { max-width: 570px; color: #d1ddd5; line-height: 1.9; font-size: 15px; margin: 0; }
@@ -62,7 +62,6 @@
     .button.secondary:hover { background: rgba(255,255,255,.08); }
     .hero-note { padding: 25px 25px 24px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.055); border-radius: 18px; backdrop-filter: blur(3px); }
     .hero-note .label { font-size: 11px; color: #e6c98f; letter-spacing: .12em; }
-    .hero-note .sponsor { display: block; margin-top: 10px; color: #e6c98f; font-weight: 600; }
     .hero-note blockquote { margin: 14px 0 12px; font-family: "Songti SC", "Noto Serif SC", serif; font-size: 23px; line-height: 1.6; }
     .hero-note small { color: #c1d0c7; line-height: 1.7; }
     main { padding: 55px 0 74px; }
@@ -137,12 +136,17 @@
     .link-panel h3 { margin: 0 0 6px; font-family: "Songti SC", "Noto Serif SC", serif; font-size: 20px; }
     .link-panel p { margin: 0; color: #c5d4cb; font-size: 12px; line-height: 1.7; }
     .link-panel .button { white-space: nowrap; }
-    .about-links { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
+    .about-links { display: block; }
     .partner-card { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 23px 26px; border: 1px solid #e5dcc5; border-radius: 18px; background: linear-gradient(145deg, #fffefa, #efe8d7); box-shadow: var(--shadow); }
     .partner-label { color: #8b7957; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
     .partner-card h3 { margin: 9px 0 7px; color: var(--pine); font-family: "Songti SC", "Noto Serif SC", serif; font-size: 21px; }
     .partner-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .partner-card .button { align-self: flex-start; }
+    .sponsor-banner { position: relative; z-index: 1; padding-top: 22px; }
+    .sponsor-banner .partner-card { flex-direction: row; align-items: center; gap: 26px; padding: 19px 24px; border-color: #e5dcc5; }
+    .sponsor-banner .partner-card h3 { font-size: 23px; }
+    .sponsor-banner .partner-card p { max-width: 650px; }
+    .sponsor-banner .partner-card .button { flex: 0 0 auto; }
     footer { background: #122e27; color: #c1d0c7; padding: 28px 0; font-size: 11px; line-height: 1.9; }
     .footer-row { display: flex; justify-content: space-between; align-items: start; gap: 24px; }
     footer strong { color: #f0d8aa; }
@@ -159,13 +163,14 @@
       nav { display: none; order: 3; flex: 0 0 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 3px; }
       nav.is-open { display: flex; }
       nav a { padding: 13px 10px; border-top: 1px solid rgba(255,255,255,.12); }
-      .hero-inner { grid-template-columns: 1fr; padding: 53px 0 57px; gap: 30px; }
+      .hero-inner { grid-template-columns: 1fr; padding: 32px 0 57px; gap: 30px; }
       .hero-note { max-width: 430px; }
       .section { margin-top: 48px; }
       .section-head { display: block; }
       .section-head p { margin-top: 10px; }
       .info-grid, .cards, .douyin-grid { grid-template-columns: 1fr; }
-      .about-links { grid-template-columns: 1fr; }
+      .sponsor-banner { padding-top: 14px; }
+      .sponsor-banner .partner-card { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 20px; }
       .timeline-list, .culture-grid { grid-template-columns: 1fr; }
       .timeline { padding: 22px 23px; }
       .campus-feature { grid-template-columns: 1fr; }
@@ -202,6 +207,16 @@
   </header>
 
   <section class="hero" id="top">
+    <div class="wrap sponsor-banner">
+      <article class="partner-card">
+        <div>
+          <div class="partner-label">特别鸣谢 / THANK YOU</div>
+          <h3>感谢永和高中校友赞助</h3>
+          <p>感谢校友对本站的支持。欢迎访问永和高中.love，了解校园介绍与动态。</p>
+        </div>
+        <a class="button" href="https://xn--fiq18monwfu6b.love/" target="_blank" rel="noopener noreferrer" aria-label="访问永和高中.love（新窗口）">访问永和高中.love ↗</a>
+      </article>
+    </div>
     <div class="wrap hero-inner">
       <div>
         <div class="eyebrow">GUSHI HIGH SCHOOL · STUDENT MADE</div>
@@ -214,7 +229,6 @@
       </div>
       <aside class="hero-note" aria-label="本站说明">
         <div class="label">本站说明 / ABOUT</div>
-        <small class="sponsor">由永和高中学生赞助</small>
         <blockquote>同学一起记录，<br>信息尽量有出处。</blockquote>
         <small>“固始高中.love”是学生个人项目。本站不代表学校发布通知，也不收集同学的个人信息。</small>
       </aside>
@@ -402,14 +416,6 @@
           <div><h3>关于固始高中.love</h3><p>这是学生个人搭建的非官方网站。本站信息用于同学交流与公开资料导航，不发布校方通知，不收集或展示未经同意的学生个人信息。</p></div>
           <a class="button" href="https://www.douyin.com/search/%E5%9B%BA%E5%A7%8B%E5%8E%BF%E9%AB%98%E7%BA%A7%E4%B8%AD%E5%AD%A6" target="_blank" rel="noopener noreferrer">在抖音继续搜索 ↗</a>
         </div>
-        <article class="partner-card">
-          <div>
-            <div class="partner-label">Friend school site</div>
-            <h3>永和高中.love</h3>
-            <p>了解固始县永和高级中学的学校介绍、校园风光与校园动态。</p>
-          </div>
-          <a class="button" href="https://xn--fiq18monwfu6b.love/" target="_blank" rel="noopener noreferrer" aria-label="访问永和高中.love（新窗口）">访问永和高中.love ↗</a>
-        </article>
       </div>
     </section>
   </main>
