@@ -143,10 +143,13 @@
     .video-art img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; transition: transform .35s ease; }
     .video-card:hover .video-art img { transform: scale(1.035); }
     .play { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: rgba(255,255,255,.18); font-size: 14px; padding-left: 2px; z-index: 2; }
-    .video-body { padding: 20px 22px 22px; }
+    .video-body { padding: 20px 22px 22px; display: flex; flex-direction: column; }
     .video-body h3 { margin: 0 0 7px; color: var(--pine); font-family: "Songti SC", "Noto Serif SC", serif; font-size: 19px; }
     .creator { color: #58715f; font-size: 12px; }
-    .video-body p { color: var(--muted); font-size: 12px; line-height: 1.8; margin: 12px 0 17px; }
+    .video-body p { color: var(--muted); font-size: 12px; line-height: 1.8; margin: 12px 0 14px; }
+    .video-credit { color: #758078; font-size: 11px; line-height: 1.65; margin: 0 0 15px; }
+    .video-credit a { color: #416a53; text-underline-offset: 3px; }
+    .video-body > .button { align-self: flex-start; margin-top: auto; }
     .disclaimer-inline { padding: 15px 18px; background: #f0eadc; border-radius: 12px; color: #66563b; font-size: 12px; line-height: 1.8; margin-top: 17px; }
     .link-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 26px; background: var(--pine); color: white; border-radius: 18px; }
     .link-panel h3 { margin: 0 0 6px; font-family: "Songti SC", "Noto Serif SC", serif; font-size: 20px; }
@@ -436,7 +439,7 @@
       </div>
       <div class="douyin-grid">
         <article class="panel video-card">
-          <a class="video-art has-photo" href="https://www.douyin.com/note/7431491658153200933" target="_blank" rel="noopener noreferrer" aria-label="打开抖音作品：#固高也很想大家（新窗口）"><img src="assets/douyin-gugao-memories.jpeg" alt=""><span class="play" aria-hidden="true">▶</span></a>
+          <a class="video-art has-photo" href="https://www.douyin.com/note/7431491658153200933" target="_blank" rel="noopener noreferrer" aria-label="打开抖音作品：#固高也很想大家（新窗口）"><img src="assets/douyin-gugao-memories.jpeg" alt="固始县高级中学校园外景"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>#固高也很想大家</h3>
             <div class="creator">抖音账号：固高百事 · 图文 · 2024-10-30</div>
@@ -445,7 +448,7 @@
           </div>
         </article>
         <article class="panel video-card">
-          <a class="video-art has-photo" href="https://www.douyin.com/video/7627366589545555813" target="_blank" rel="noopener noreferrer" aria-label="打开抖音视频：为什么你不在固始县高级中学（新窗口）"><img src="assets/douyin-campus-road.jpeg" alt=""><span class="play" aria-hidden="true">▶</span></a>
+          <a class="video-art has-photo" href="https://www.douyin.com/video/7627366589545555813" target="_blank" rel="noopener noreferrer" aria-label="打开抖音视频：为什么你不在固始县高级中学（新窗口）"><img src="assets/douyin-campus-road.jpeg" alt="固高校园林荫道路视频封面"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>为什么你不在固始县高级中学</h3>
             <div class="creator">抖音账号：屿安📷 · 视频 · 2026-04-11</div>
@@ -454,38 +457,42 @@
           </div>
         </article>
         <article class="panel video-card">
-          <div class="video-art" aria-hidden="true" style="background:linear-gradient(130deg,#33594a,#8a9b70)"><span class="play">▶</span></div>
+          <a class="video-art has-photo" href="https://www.douyin.com/video/7658571184551791926" target="_blank" rel="noopener noreferrer" aria-label="打开抖音视频：固始本地学子故事（新窗口）"><img src="assets/douyin-local-students.jpeg" alt="云上固始采访固始本地学子故事的视频封面" loading="lazy"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>固始本地学子故事</h3>
             <div class="creator">抖音账号：云上固始 · 认证账号 · 2026-07-04</div>
             <p>本地教育专题作品。人物和成绩详情请查看原视频；本站不另行转载学生个人信息。</p>
+            <div class="video-credit">封面来自对应抖音原视频，点击图片或下方按钮可查看原帖。</div>
             <a class="button" href="https://www.douyin.com/video/7658571184551791926" target="_blank" rel="noopener noreferrer">打开抖音原视频 ↗</a>
           </div>
         </article>
         <article class="panel video-card">
-          <div class="video-art" aria-hidden="true" style="background:linear-gradient(130deg,#7d8d68,#c49e62)"><span class="play">▶</span></div>
+          <a class="video-art has-photo" href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer" aria-label="打开抖音图文：固高校园春色（新窗口）"><img src="assets/campus-gallery-05.webp" alt="抖音图文中的校园玉兰花"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>固高校园春色——醉美春光三月里！</h3>
             <div class="creator">抖音账号：滒滒君晟 · 图文 · 2022-03-15</div>
             <p>较早的校园图文记录，适合作为同学回忆外链，不代表当前校园情况。</p>
+            <div class="video-credit">图片取自该校园图文原帖，作者：滒滒君晟。</div>
             <a class="button" href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">打开抖音原帖 ↗</a>
           </div>
         </article>
         <article class="panel video-card">
-          <div class="video-art" aria-hidden="true" style="background:linear-gradient(130deg,#435e5a,#7e9a88)"><span class="play">▶</span></div>
+          <a class="video-art has-photo" href="https://www.douyin.com/note/7636642834376628470" target="_blank" rel="noopener noreferrer" aria-label="打开抖音图文：天南海北太远了，我带你回固始高中吧（新窗口）"><img src="assets/campus-gallery-11.webp" alt="固始县高级中学校园俯瞰配图" loading="lazy"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>天南海北太远了，我带你回固始高中吧</h3>
             <div class="creator">抖音账号：NiUniverse · 图文 · 2026-05-06</div>
             <p>带有“固始县高级中学”话题的校园回忆图文，由原作者发布。</p>
+            <div class="video-credit">校园配图来自抖音用户滒滒君晟的公开校园图文，并非该作品画面。<a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">查看配图来源 ↗</a></div>
             <a class="button" href="https://www.douyin.com/note/7636642834376628470" target="_blank" rel="noopener noreferrer">打开抖音原帖 ↗</a>
           </div>
         </article>
         <article class="panel video-card">
-          <div class="video-art" aria-hidden="true" style="background:linear-gradient(130deg,#647251,#c5a56e)"><span class="play">▶</span></div>
+          <a class="video-art has-photo" href="https://www.douyin.com/video/7512398588681424137" target="_blank" rel="noopener noreferrer" aria-label="打开抖音视频：来自两位老师的学科祝福（新窗口）"><img src="assets/campus-gallery-06.webp" alt="固高校园教学楼春日配图" loading="lazy"><span class="play" aria-hidden="true">▶</span></a>
           <div class="video-body">
             <h3>来自两位老师的学科祝福</h3>
             <div class="creator">抖音账号：云上固始 · 认证账号 · 2025-06-06</div>
             <p>本地教育媒体发布的高考祝福内容，具体信息请查看原视频。</p>
+            <div class="video-credit">校园配图来自抖音用户滒滒君晟的公开校园图文，并非该视频画面。<a href="https://www.douyin.com/note/7075107250611719459" target="_blank" rel="noopener noreferrer">查看配图来源 ↗</a></div>
             <a class="button" href="https://www.douyin.com/video/7512398588681424137" target="_blank" rel="noopener noreferrer">打开抖音原视频 ↗</a>
           </div>
         </article>
