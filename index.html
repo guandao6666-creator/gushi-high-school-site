@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#183b32">
   <meta name="description" content="固高同学站是学生个人搭建的非官方网站，整理校园记忆、公开信息与抖音外链。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="固始高中.love｜固高同学站">
+  <meta property="og:description" content="学生视角记录校园记忆，整理可追溯的公开信息。学生个人项目，非学校官方网站。">
+  <meta property="og:url" content="https://xn--fiq67s2lch58h.love/">
   <title>固始高中.love｜固高同学站（学生非官方）</title>
   <style>
     :root {
@@ -22,22 +27,28 @@
       font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body { margin: 0; background: var(--paper); color: var(--ink); }
     a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #d8a95d; outline-offset: 4px; }
     .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position: fixed; z-index: 50; top: 12px; left: 12px; transform: translateY(-160%); padding: 11px 15px; border-radius: 8px; background: #fffefa; color: var(--pine); font-weight: 700; box-shadow: var(--shadow); }
+    .skip-link:focus { transform: translateY(0); }
     .notice { background: #f0dfbd; color: #4b3a1d; font-size: 13px; text-align: center; padding: 10px 16px; }
     .notice strong { letter-spacing: .04em; }
-    header { background: var(--pine); color: white; }
+    header { position: sticky; top: 0; z-index: 20; background: var(--pine); color: white; box-shadow: 0 4px 18px rgba(10, 34, 28, .13); }
     .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand-mark { width: 48px; height: 48px; display: block; flex: 0 0 48px; overflow: hidden; border: 2px solid #f1d59e; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,.12); }
     .brand-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .brand-title { font-size: 17px; font-weight: 700; letter-spacing: .08em; }
     .brand-sub { display: block; color: #b9ccc2; font-size: 10px; letter-spacing: .14em; margin-top: 3px; }
-    nav { display: flex; gap: 27px; align-items: center; }
-    nav a { color: #d5e0d9; text-decoration: none; font-size: 13px; }
-    nav a:hover { color: white; }
+    nav { display: flex; gap: 22px; align-items: center; }
+    nav a { color: #d5e0d9; text-decoration: none; font-size: 13px; padding: 9px 0; transition: color .18s; }
+    nav a:hover, nav a:focus-visible { color: white; }
+    .nav-toggle { display: none; align-items: center; gap: 9px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 10px; background: transparent; color: white; font: inherit; font-size: 13px; cursor: pointer; }
+    .nav-toggle-icon { display: grid; gap: 4px; }
+    .nav-toggle-icon i { display: block; width: 16px; height: 2px; border-radius: 2px; background: currentColor; }
     .hero { background: var(--pine); color: white; overflow: hidden; position: relative; }
     .hero::after { content: ""; position: absolute; width: 410px; height: 410px; border: 1px solid rgba(230,208,164,.2); border-radius: 50%; right: -70px; top: -90px; box-shadow: 0 0 0 45px rgba(230,208,164,.04), 0 0 0 95px rgba(230,208,164,.035); }
     .hero-inner { position: relative; z-index: 1; padding: 73px 0 78px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 52px; }
@@ -63,6 +74,8 @@
     .section-head p { max-width: 490px; color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
     .info-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
     .panel { background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .story, .video-card { transition: transform .2s ease, box-shadow .2s ease; }
+    .story:hover, .video-card:hover { transform: translateY(-3px); box-shadow: 0 22px 48px rgba(24, 59, 50, .14); }
     .campus-feature { display: grid; grid-template-columns: .95fr 1.05fr; overflow: hidden; }
     .campus-visual { min-height: 360px; display: grid; place-items: center; overflow: hidden; background: #e5ece5; }
     .campus-photo { display: block; width: 100%; height: 100%; min-height: 360px; max-height: 470px; object-fit: cover; object-position: center; }
@@ -119,10 +132,18 @@
     .footer-row { display: flex; justify-content: space-between; align-items: start; gap: 24px; }
     footer strong { color: #f0d8aa; }
     footer a { color: #dbe5dd; }
+    .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 15; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: var(--pine); color: white; box-shadow: 0 8px 24px rgba(18, 46, 39, .25); font-size: 21px; text-decoration: none; transition: transform .18s, background .18s; }
+    .to-top:hover { transform: translateY(-3px); background: var(--pine-2); }
+    .to-top[hidden] { display: none; }
     @media (max-width: 760px) {
       .wrap { width: min(100% - 28px, 600px); }
-      .nav { min-height: 68px; }
-      nav { display: none; }
+      html { scroll-padding-top: 76px; }
+      .nav { min-height: 68px; flex-wrap: wrap; gap: 0 14px; padding: 9px 0; }
+      .brand { margin-right: auto; }
+      .nav-toggle { display: inline-flex; order: 2; }
+      nav { display: none; order: 3; flex: 0 0 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 3px; }
+      nav.is-open { display: flex; }
+      nav a { padding: 13px 10px; border-top: 1px solid rgba(255,255,255,.12); }
       .hero-inner { grid-template-columns: 1fr; padding: 53px 0 57px; gap: 30px; }
       .hero-note { max-width: 430px; }
       .section { margin-top: 48px; }
@@ -137,11 +158,13 @@
       .school-card { min-height: 0; }
       .footer-row { display: block; }
       .footer-row > * + * { margin-top: 13px; }
+      .to-top { right: 14px; bottom: 14px; width: 42px; height: 42px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
   <div class="notice"><strong>学生个人项目 · 非官方网站</strong>　与固始县高级中学及相关部门无隶属关系；重要通知请以官方发布为准。</div>
   <header>
     <div class="wrap nav">
@@ -149,9 +172,12 @@
         <span class="brand-mark"><img src="assets/school-badge.jpg" alt="固始县高级中学校徽"></span>
         <span><span class="brand-title">固高 · 同学站</span><span class="brand-sub">STUDENT COMMUNITY · GUSHI</span></span>
       </a>
-      <nav aria-label="主导航">
+      <nav id="primary-nav" aria-label="主导航">
         <a href="#school">学校资料</a><a href="#campus">校园风景</a><a href="#history">校史文化</a><a href="#updates">公开资讯</a><a href="#douyin">抖音外链</a><a href="#about">关于本站</a>
       </nav>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
+        <span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>菜单</span>
+      </button>
     </div>
   </header>
 
@@ -168,14 +194,14 @@
       </div>
       <aside class="hero-note" aria-label="本站说明">
         <div class="label">本站说明 / ABOUT</div>
-        <small class="sponsor">由永和高中学生赞助 · 赞助商：宋易达</small>
+        <small class="sponsor">由永和高中学生赞助</small>
         <blockquote>同学一起记录，<br>信息尽量有出处。</blockquote>
         <small>“固始高中.love”是学生个人项目。本站不代表学校发布通知，也不收集同学的个人信息。</small>
       </aside>
     </div>
   </section>
 
-  <main class="wrap">
+  <main class="wrap" id="main-content">
     <section class="section" id="campus">
       <div class="section-head">
         <div><div class="kicker">Campus moments</div><h2>校园风景</h2></div>
@@ -348,5 +374,26 @@
       <div>本站与固始县高级中学及相关部门无隶属关系。<br>校务、招生、考试等信息请以学校或政府部门原文为准。</div>
     </div>
   </footer>
+  <a class="to-top" href="#top" aria-label="返回页面顶部" title="返回顶部" hidden>↑</a>
+  <script>
+    const menuButton = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('#primary-nav');
+    const closeMenu = () => {
+      primaryNav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    };
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('is-open', !isOpen);
+    });
+    primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+    const toTop = document.querySelector('.to-top');
+    const updateToTop = () => { toTop.hidden = window.scrollY < 520; };
+    window.addEventListener('scroll', updateToTop, { passive: true });
+    updateToTop();
+  </script>
 </body>
 </html>
